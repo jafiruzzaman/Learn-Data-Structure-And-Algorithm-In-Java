@@ -12,7 +12,7 @@ public class largestElement {
         max= arr[i];
       }
     }
-    if (max==0) return -1;
+    if (max==0) return arr[0];
     return max;
   }
   static void main() {
