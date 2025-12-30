@@ -1,18 +1,18 @@
 /*
-  * Question link --> https://www.geeksforgeeks.org/problems/cyclically-rotate-an-array-by-one2614/1
+  Question link --> https://www.hackerrank.com/challenges/ctci-array-left-rotation/problem
 */
 package lecture02;
+
 import java.util.Scanner;
 
-public class rightRotateByOne {
-  static void rightRotate(int[] arr){
-    int len = arr.length;
-    if (len==0) return;
-    int lastElement = arr[len-1];
-    for (int i = len-1;i>0;i--){
-      arr[i] = arr[i-1];
+public class leftRotateByOnePlaces {
+  static void leftRotateByOne(int[] arr){
+    if(arr.length == 0) return;
+    int lastElement = arr[0];
+    for (int i =1;i< arr.length;i++){
+      arr[i-1] = arr[i];
     }
-    arr[0] = lastElement;
+    arr[arr.length-1] = lastElement;
   }
   static void print(int[] arr){
     for (int i: arr){
@@ -29,7 +29,7 @@ public class rightRotateByOne {
     for (int i = 0; i < size; i++) {
       arr[i] = sc.nextInt();
     }
-    rightRotate(arr);
+    leftRotateByOne(arr);
     print(arr);
     sc.close();
   }
