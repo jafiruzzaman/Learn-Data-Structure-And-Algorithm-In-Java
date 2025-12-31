@@ -42,6 +42,7 @@ public class missingNumber {
     int result = missingNumberOptimal(arr);
     int xor = missingNumberXOR(arr);
     System.out.println("The missing number is "+result);
+    System.out.println("The missing number is "+xor);
     sc.close();
   }
 }
