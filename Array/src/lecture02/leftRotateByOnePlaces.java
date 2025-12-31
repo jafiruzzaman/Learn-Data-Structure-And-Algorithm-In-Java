@@ -6,19 +6,22 @@ package lecture02;
 import java.util.Scanner;
 
 public class leftRotateByOnePlaces {
-  static void leftRotateByOne(int[] arr){
-    if(arr.length == 0) return;
+  static void leftRotateByOne(int[] arr) {
+    if (arr.length == 0)
+      return;
     int lastElement = arr[0];
-    for (int i =1;i< arr.length;i++){
-      arr[i-1] = arr[i];
+    for (int i = 1; i < arr.length; i++) {
+      arr[i - 1] = arr[i];
     }
-    arr[arr.length-1] = lastElement;
+    arr[arr.length - 1] = lastElement;
   }
-  static void print(int[] arr){
-    for (int i: arr){
-      System.out.print(i+" ");
+
+  static void print(int[] arr) {
+    for (int i : arr) {
+      System.out.print(i + " ");
     }
   }
+
   static void main() {
     System.out.println("=================== Left Rotate By One ===================");
     Scanner sc = new Scanner(System.in);

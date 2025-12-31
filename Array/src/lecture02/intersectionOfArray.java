@@ -10,59 +10,62 @@ import java.util.HashSet;
 import java.util.Scanner;
 
 public class intersectionOfArray {
-//  This is Better Solution --> ⚠️ if array is not sorted then
-  static ArrayList<Integer> intersectionOfTwoSortedArray(int[] arr, int[] brr){
+  // This is Better Solution --> ⚠️ if array is not sorted then
+  static ArrayList<Integer> intersectionOfTwoSortedArray(int[] arr, int[] brr) {
 
-    int i =0,j=0;
+    int i = 0, j = 0;
     ArrayList<Integer> result = new ArrayList<>();
-    while (i<arr.length && j< brr.length){
-      if (result.isEmpty() || result.getLast()!=arr[i]){
+    while (i < arr.length && j < brr.length) {
+      if (result.isEmpty() || result.getLast() != arr[i]) {
         result.add(arr[i]);
-      i++;j++;
-      }
-      else if(arr[i]<brr[j]){
         i++;
-      }else{
+        j++;
+      } else if (arr[i] < brr[j]) {
+        i++;
+      } else {
         j++;
       }
     }
     return result;
   }
-  static int[] intersection(int[] nums1,int[] nums2){
+
+  static int[] intersection(int[] nums1, int[] nums2) {
     HashSet<Integer> set = new HashSet<>();
     HashSet<Integer> result = new HashSet<>();
 
     // add all the elements of nums1
-    for (int num:nums1){
+    for (int num : nums1) {
       set.add(num);
     }
     // check num2
-    for (int num : nums2){
-      if (set.contains(num)){
+    for (int num : nums2) {
+      if (set.contains(num)) {
         result.add(num);
       }
     }
-    //    convert to int[] array
+    // convert to int[] array
     int[] ans = new int[result.size()];
-    int i =0;
-    for(int num:result){
+    int i = 0;
+    for (int num : result) {
       ans[i++] = num;
     }
     return ans;
   }
 
-  static void printArrayList(ArrayList<Integer> arr){
-    for (int i : arr){
-      System.out.print(i+" ");
+  static void printArrayList(ArrayList<Integer> arr) {
+    for (int i : arr) {
+      System.out.print(i + " ");
     }
     System.out.println();
   }
-  static void printArray(int[] arr){
-    for (int i : arr){
-      System.out.print(i+" ");
+
+  static void printArray(int[] arr) {
+    for (int i : arr) {
+      System.out.print(i + " ");
     }
     System.out.println();
   }
+
   static void main() {
     System.out.println("================================== intersection of 2 sorted array " +
         "==================================");
@@ -81,8 +84,8 @@ public class intersectionOfArray {
     for (int i = 0; i < brrSize; i++) {
       brr[i] = sc.nextInt();
     }
-    ArrayList<Integer> result = intersectionOfTwoSortedArray(arr,brr);
-    int[] resultArray = intersection(arr,brr);
+    ArrayList<Integer> result = intersectionOfTwoSortedArray(arr, brr);
+    int[] resultArray = intersection(arr, brr);
     printArrayList(result);
     printArray(resultArray);
     sc.close();

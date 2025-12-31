@@ -4,21 +4,23 @@
 */
 
 package lecture03;
+
 import java.util.Scanner;
 
 public class maxConsecutiveOnes {
-  static int maxConsecutiveOne(int[] arr){
-    int max = 0,count=0;
-    for (int i =0;i< arr.length;i++){
-      if (arr[i]==1){
+  static int maxConsecutiveOne(int[] arr) {
+    int max = 0, count = 0;
+    for (int i = 0; i < arr.length; i++) {
+      if (arr[i] == 1) {
         count++;
-        max = Math.max(max,count);
-      }else {
-        count=0;
+        max = Math.max(max, count);
+      } else {
+        count = 0;
       }
     }
     return max;
   }
+
   static void main() {
     System.out.println("============================================ Max Consecutive Ones " +
         "============================================");
@@ -31,7 +33,7 @@ public class maxConsecutiveOnes {
       arr[i] = sc.nextInt();
     }
     int max = maxConsecutiveOne(arr);
-    System.out.println("The maximum number of one is "+max);
+    System.out.println("The maximum number of one is " + max);
     sc.close();
   }
 }

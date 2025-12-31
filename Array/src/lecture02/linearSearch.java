@@ -3,15 +3,18 @@
 */
 
 package lecture02;
+
 import java.util.Scanner;
 
 public class linearSearch {
-  static int linearSearch(int[] arr,int x){
+  static int linearSearch(int[] arr, int x) {
     for (int i = 0; i < arr.length; i++) {
-      if (arr[i]==x) return i;
+      if (arr[i] == x)
+        return i;
     }
     return -1;
   }
+
   static void main() {
     System.out.println("================================ linear search ================================");
     Scanner sc = new Scanner(System.in);
@@ -24,8 +27,8 @@ public class linearSearch {
     }
     System.out.println("Enter the elemnt what you want to find");
     int x = sc.nextInt();
-    int result = linearSearch(arr,x);
-    System.out.println("The element is present at "+result);
+    int result = linearSearch(arr, x);
+    System.out.println("The element is present at " + result);
     sc.close();
   }
 }

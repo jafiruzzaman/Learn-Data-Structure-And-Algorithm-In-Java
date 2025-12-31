@@ -7,50 +7,51 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class unionOfArray {
-  static ArrayList<Integer> unionOfTwoSortedArray(int[] arr, int[] brr){
-    int i =0, j =0;
+  static ArrayList<Integer> unionOfTwoSortedArray(int[] arr, int[] brr) {
+    int i = 0, j = 0;
     ArrayList<Integer> result = new ArrayList<>();
 
-    while (i<arr.length && j< brr.length){
-      int x = arr[i],y = brr[j];
-      if (x==y){
-        if (result.isEmpty() || result.get(result.size()-1)!=x){
-          result.add(x);
-        }
-        i++;j++;
-      }
-      else if (x<y){
-        if (result.isEmpty() || result.get(result.size()-1)!=x){
+    while (i < arr.length && j < brr.length) {
+      int x = arr[i], y = brr[j];
+      if (x == y) {
+        if (result.isEmpty() || result.get(result.size() - 1) != x) {
           result.add(x);
         }
         i++;
-      }
-      else {
-        if (result.isEmpty() || result.get(result.size()-1)!=y){
+        j++;
+      } else if (x < y) {
+        if (result.isEmpty() || result.get(result.size() - 1) != x) {
+          result.add(x);
+        }
+        i++;
+      } else {
+        if (result.isEmpty() || result.get(result.size() - 1) != y) {
           result.add(y);
         }
         j++;
       }
     }
-    while (i< arr.length){
-      if (result.isEmpty() || result.get(result.size()-1)!=arr[i]){
+    while (i < arr.length) {
+      if (result.isEmpty() || result.get(result.size() - 1) != arr[i]) {
         result.add(arr[i]);
       }
       i++;
     }
-    while (j< brr.length){
-      if (result.isEmpty() || result.get(result.size()-1)!=brr[j]){
+    while (j < brr.length) {
+      if (result.isEmpty() || result.get(result.size() - 1) != brr[j]) {
         result.add(brr[j]);
       }
       j++;
     }
     return result;
   }
-  static void print(ArrayList<Integer> arr){
-    for (int i: arr){
-      System.out.print(i+" ");
+
+  static void print(ArrayList<Integer> arr) {
+    for (int i : arr) {
+      System.out.print(i + " ");
     }
   }
+
   static void main() {
     System.out.println("====================================== Union of 2 " +
         "Sorted Array======================================");
@@ -70,7 +71,7 @@ public class unionOfArray {
       brr[i] = sc.nextInt();
     }
     System.out.println("After ");
-    ArrayList<Integer> result = unionOfTwoSortedArray(arr,brr);
+    ArrayList<Integer> result = unionOfTwoSortedArray(arr, brr);
     print(result);
   }
 }

@@ -6,8 +6,8 @@ package lecture02;
 import java.util.Scanner;
 
 public class rightRotateByDPlaces {
-  static void reverse(int[] arr,int start,int end){
-    while (start<end){
+  static void reverse(int[] arr, int start, int end) {
+    while (start < end) {
       int temp = arr[start];
       arr[start] = arr[end];
       arr[end] = temp;
@@ -15,19 +15,23 @@ public class rightRotateByDPlaces {
       end--;
     }
   }
-  static void rightRotateByD(int[] arr,int d){
+
+  static void rightRotateByD(int[] arr, int d) {
     int len = arr.length;
-    if (len<=1) return;
+    if (len <= 1)
+      return;
     d = d % len;
-    reverse(arr,0,len-d-1);
-    reverse(arr,len-d,len-1);
-    reverse(arr,0,len-1);
+    reverse(arr, 0, len - d - 1);
+    reverse(arr, len - d, len - 1);
+    reverse(arr, 0, len - 1);
   }
-  static void print(int[] arr){
-    for (int i: arr){
-      System.out.print(i+" ");
+
+  static void print(int[] arr) {
+    for (int i : arr) {
+      System.out.print(i + " ");
     }
   }
+
   static void main() {
     System.out.println("============================= Right Rotate An Array By D Places =============================");
     Scanner sc = new Scanner(System.in);
@@ -42,7 +46,7 @@ public class rightRotateByDPlaces {
     System.out.println("How many you want to rotate");
 
     int d = sc.nextInt();
-    rightRotateByD(arr,d);
+    rightRotateByD(arr, d);
     print(arr);
 
     sc.close();

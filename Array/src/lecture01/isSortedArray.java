@@ -7,16 +7,17 @@ package lecture01;
 import java.util.Scanner;
 
 public class isSortedArray {
-  static boolean isSorted(int[] arr){
+  static boolean isSorted(int[] arr) {
     // length of the array
     int len = arr.length;
-    for (int i=1;i<len;i++){
-      if (arr[i]<arr[i-1]){ // ✅ check unsorted pair
+    for (int i = 1; i < len; i++) {
+      if (arr[i] < arr[i - 1]) { // ✅ check unsorted pair
         return false;
       }
     }
     return true;
   }
+
   static void main() {
     System.out.println("====================== Check Array is Sorted ======================");
     Scanner sc = new Scanner(System.in);
@@ -28,7 +29,7 @@ public class isSortedArray {
       arr[i] = sc.nextInt();
     }
     boolean result = isSorted(arr);
-    System.out.println("is the array is sorted : "+result);
+    System.out.println("is the array is sorted : " + result);
     sc.close();
   }
 }

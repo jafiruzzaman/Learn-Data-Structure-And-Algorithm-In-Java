@@ -4,12 +4,13 @@ import java.util.Scanner;
 
 public class removeDuplicates {
 
-  static int removeDuplicates(int[] arr){
-    if (arr.length == 0) return 0; // handle empty array
+  static int removeDuplicates(int[] arr) {
+    if (arr.length == 0)
+      return 0; // handle empty array
 
     int i = 0;
-    for (int j = 1; j < arr.length; j++){
-      if (arr[i] != arr[j]){ // unique element
+    for (int j = 1; j < arr.length; j++) {
+      if (arr[i] != arr[j]) { // unique element
         i++;
         arr[i] = arr[j];
       }

@@ -8,27 +8,29 @@ package lecture03;
 import java.util.Scanner;
 
 public class missingNumber {
-  static int missingNumberOptimal(int[] arr){
+  static int missingNumberOptimal(int[] arr) {
     // i will traverse from 0 to n-1 to calculate the actual sum
-    int actualSum=0;
-    for (int i:arr){
-      actualSum+=i;
+    int actualSum = 0;
+    for (int i : arr) {
+      actualSum += i;
     }
     int n = arr.length;
     long expectedSum = (long) n * (n + 1) / 2;
     return (int) (expectedSum - actualSum);
   }
-  static int missingNumberXOR(int[] arr){
-    int xor=0;
+
+  static int missingNumberXOR(int[] arr) {
+    int xor = 0;
     // XOR all numbers from 0 to n
     for (int i = 0; i <= arr.length; i++) {
       xor ^= i;
     }
-    for (int i:arr){
-      xor^=i;
+    for (int i : arr) {
+      xor ^= i;
     }
     return xor;
   }
+
   static void main() {
     System.out.println("=================================== Missing Number ===================================");
     Scanner sc = new Scanner(System.in);
@@ -41,8 +43,8 @@ public class missingNumber {
     }
     int result = missingNumberOptimal(arr);
     int xor = missingNumberXOR(arr);
-    System.out.println("The missing number is "+result);
-    System.out.println("The missing number is "+xor);
+    System.out.println("The missing number is " + result);
+    System.out.println("The missing number is " + xor);
     sc.close();
   }
 }
