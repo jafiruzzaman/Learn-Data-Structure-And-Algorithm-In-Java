@@ -5,10 +5,10 @@ package lecture03;
 import java.util.Scanner;
 
 public class appearsOne {
-  static int findAppearsOne(int[] arr){
+  static int findAppearsOne(int[] arr) {
     int xor = 0;
     for (int item : arr) {
-        xor^=item;
+      xor ^= item;
     }
     return xor;
   }
@@ -24,7 +24,7 @@ public class appearsOne {
       arr[i] = sc.nextInt();
     }
     int findAppears = findAppearsOne(arr);
-    System.out.println("The single element in this array is "+findAppears);
+    System.out.println("The single element in this array is " + findAppears);
     sc.close();
   }
 }

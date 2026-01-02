@@ -7,7 +7,7 @@ package lecture05;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class twoSum {
+public class twoSumPair {
   static int[] twoSum(int[] nums, int target) {
     HashMap<Integer, Integer> map = new HashMap<>();
     for (int i = 0; i < nums.length; i++) {
@@ -19,12 +19,14 @@ public class twoSum {
     }
     return new int[] { -1, -1 };
   }
-  static void print(int[] nums){
+
+  static void print(int[] nums) {
     for (int item : nums) {
-        System.out.print(item+" ");
+      System.out.print(item + " ");
     }
     System.out.println();
   }
+
   public static void main(String[] args) {
     System.out.println("=================================== Two Sum Problem ===================================");
     Scanner sc = new Scanner(System.in);
