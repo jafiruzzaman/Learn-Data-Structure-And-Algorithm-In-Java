@@ -1,4 +1,4 @@
-package basics;
+package oops;
 
 public class LearnClassesAndObject {
 
