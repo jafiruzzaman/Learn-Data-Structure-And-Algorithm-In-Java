@@ -2,7 +2,5 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/DSA" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Learn Data Structure And Algorithm" vcs="Git" />
   </component>
 </project>
